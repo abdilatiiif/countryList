@@ -260,9 +260,28 @@
         { name: "Zambia", code: "ZM" },
         { name: "Zimbabwe", code: "ZW" },
       ];
-    
-      
-    
+
+      const searchInput = document.getElementById("search-field");
+      const btn = document.getElementById("search-btn");
+
+      const search = (input) => {
+
+       const result = allCountries.map(country => {
+        return country.name
+       }).filter(country =>  country.toLocaleLowerCase().includes(input))
+
+       console.log(result);
+
+      };
+
+
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        search(searchInput.value);
+      });
+
+
     </script>
   </body>
 </html>
